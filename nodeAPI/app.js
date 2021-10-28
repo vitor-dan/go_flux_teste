@@ -9,11 +9,13 @@ mongoose.connect("mongodb://localhost:27017/gofluxDB", {useNewUrlParser: true});
 const embarcadorRoute = require('./routes/Embarcador');
 const transportadorRoute = require('./routes/Transportador');
 const ofertaRoute = require('./routes/Oferta');
+const lanceRoute = require('./routes/Lance');
 
 app.use(express.json());
 app.use('/embarcador', embarcadorRoute);
 app.use('/transportador', transportadorRoute);
 app.use('/oferta', ofertaRoute);
+app.use('/lance', lanceRoute);
 
 
 app.listen(3000);
