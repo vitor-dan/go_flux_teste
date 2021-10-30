@@ -1,0 +1,58 @@
+<div class="container main-container">
+    <h1>Embarcadores</h1>
+    <h2>Novo Embarcador</h2>
+    <hr>
+    <form>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="id">Id</label>
+                <input type="number" name="id" [(ngModel)]="embarcador._id">
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="id">Name</label>
+                <input type="text" name="name" [(ngModel)]="embarcador.name">
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="id">Doc</label>
+                <input type="text" name="documento" [(ngModel)]="embarcador.doc">
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="id">About</label>
+                <input type="text" name="sobre" [(ngModel)]="embarcador.about">
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="id">Active</label>
+                <input type="checkbox" name="ativo" [(ngModel)]="embarcador.active" [value]=true>
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="id">Site</label>
+                <input type="text" name="site" [(ngModel)]="embarcador.site">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" type="button" (click)="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+    </form>
+    <hr>
+
+    <h2>Embarcadores</h2>
+
+    <table class="table table-bordered">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Sobre</th>
+            <th scope="col">Ativo</th>
+            <th scope="col">Site</th>
+        </tr>
+        <tr *ngFor="let embarcador of embarcadores">
+            <td>{{embarcador._id}}</td>
+            <td>{{embarcador.name}}</td>
+            <td>{{embarcador.doc}}</td>
+            <td>{{embarcador.about}}</td>
+            <td>{{embarcador.active}}</td>
+            <td>{{embarcador.site}}</td>
+        </tr>
+    </table>
+</div>

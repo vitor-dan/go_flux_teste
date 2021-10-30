@@ -29,16 +29,17 @@ router.get('/:embarcadorId', function(req,res){
 //POST 
 router.post("/", function(req,res){
     const embarcador = new Embarcador ({
-        _id: req.body.id,
+        _id: req.body._id,
         name: req.body.name,
         doc: req.body.doc,
         about: req.body.about,
         active: req.body.active,
         site: req.body.site
     })
+    console.log(req.body);
     embarcador.save()
     .then(function(data){
-        res.status(201).end();
+        // res.status(201).end();
         res.json(data);
     })
     .catch(function(err){
@@ -50,7 +51,7 @@ router.post("/", function(req,res){
 router.delete('/:embarcadorId', function(req,res){
     Embarcador.remove({_id: req.params.embarcadorId}, function(err){
         if(!err){
-            res.status(200).end();
+            // res.status(200).end();
             res.json("Embarcador removido");
         }else{
             res.json(err);
@@ -63,7 +64,7 @@ router.patch('/:embarcadorId', function(req,res){
     if(req.body.embarcadorId != req.params.embarcadorId)
     { 
         res.statusMessage = "Id body not equals Id Header";
-        res.status(400).end();
+        // res.status(400).end();
     }
     else{
     Embarcador.updateOne({_id: req.params.embarcadorId},
@@ -76,7 +77,7 @@ router.patch('/:embarcadorId', function(req,res){
                 site: req.body.site
             }}, function(err){
                     if(!err){
-                    res.status(201).end();
+                    // res.status(201).end();
                     res.json("Embarcador modificado");
                     }else{
                         res.json(err);

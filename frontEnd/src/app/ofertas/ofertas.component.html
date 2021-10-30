@@ -1,0 +1,64 @@
+<div class="container main-container">
+    <h1>Ofertas</h1>
+    <h2>Nova oferta</h2>
+    <hr>
+    <form>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Id</label>
+                <input type="number" name="id" [(ngModel)]="oferta._id">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Id Fornecedor</label>
+                <input type="number" name="id" [(ngModel)]="oferta.id_customer">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">De</label>
+                <input type="text" name="name" [(ngModel)]="oferta.from">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Para</label>
+                <input type="text" name="documento" [(ngModel)]="oferta.to">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Valor inicial</label>
+                <input type="number" name="id" [(ngModel)]="oferta.initial_value">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Peso</label>
+                <input type="number" name="id" [(ngModel)]="oferta.amount">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Tipo Peso</label>
+                <input type="text" name="site" [(ngModel)]="oferta.amount_type">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" type="button" (click)="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+    </form>
+    <hr>
+
+    <h2>Ofertas</h2>
+
+    <table class="table table-bordered">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Id Fornecedor</th>
+            <th scope="col">De</th>
+            <th scope="col">Para</th>
+            <th scope="col">Valor inicial</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Tipo do peso</th>
+        </tr>
+        <tr *ngFor="let oferta of ofertas">
+            <td>{{oferta._id}}</td>
+            <td>{{oferta.id_customer}}</td>
+            <td>{{oferta.from}}</td>
+            <td>{{oferta.to}}</td>
+            <td>{{oferta.initial_value | currency : 'BRL' }}</td>
+            <td>{{oferta.amount}}</td>
+            <td>{{oferta.amount_type}}</td>
+        </tr>
+    </table>
+</div>

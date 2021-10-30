@@ -1,0 +1,46 @@
+<div class="container main-container">
+    <h1>Lances</h1>
+    <h2>Nova lance</h2>
+    <hr>
+    <form>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Id Fornercedor</label>
+                <input type="number" name="id" [(ngModel)]="lance.id_provider">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Id Transportador</label>
+                <input type="number" name="id" [(ngModel)]="lance.id_offer">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Valor</label>
+                <input type="number" name="id" [(ngModel)]="lance.value">
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="id">Peso</label>
+                <input type="number" name="id" [(ngModel)]="lance.amount">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" type="button" (click)="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+    </form>
+    <hr>
+
+    <h2>Lances</h2>
+
+    <table class="table table-bordered">
+        <tr>
+            <th scope="col">Id Fornecedor</th>
+            <th scope="col">Id Transportador</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Peso</th>
+        </tr>
+        <tr *ngFor="let lance of lances">
+            <td>{{lance.id_provider}}</td>
+            <td>{{lance.id_offer}}</td>
+            <td>{{lance.value | currency : 'BRL'}}</td>
+            <td>{{lance.amount}}</td>
+        </tr>
+    </table>
+</div>

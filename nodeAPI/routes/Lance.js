@@ -31,9 +31,10 @@ router.post("/", function(req,res){
     const lance = new Lance({
         id_provider: req.body.id_provider,
         id_offer: req.body.id_offer,
-        value: req.body.from,
+        value: req.body.value,
         amount: req.body.amount,
     })
+    console.log(req.body)
     lance.save()
     .then(function(data){
         // res.status(201).end();

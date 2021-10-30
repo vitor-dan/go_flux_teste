@@ -29,13 +29,14 @@ router.get('/:transportadorId', function(req,res){
 //POST 
 router.post("/", function(req,res){
     const transportador = new Transportador({
-        _id: req.body.id,
+        _id: req.body._id,
         name: req.body.name,
         doc: req.body.doc,
         about: req.body.about,
         active: req.body.active,
         site: req.body.site
     })
+    console.log(req.body)
     transportador.save()
     .then(function(data){
         // res.status(201).end();

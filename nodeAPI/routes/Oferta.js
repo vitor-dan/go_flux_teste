@@ -29,7 +29,7 @@ router.get('/:ofertaId', function(req,res){
 //POST 
 router.post("/", function(req,res){
     const oferta = new Oferta({
-        _id: req.body.id,
+        _id: req.body._id,
         id_customer: req.body.id_customer,
         from: req.body.from,
         to: req.body.to,
